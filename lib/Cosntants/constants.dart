@@ -18,3 +18,10 @@ TextStyle blueheadingfont = TextStyle(
     color: btnblue,
     fontSize: 50,
     fontWeight: FontWeight.w900);
+
+TextStyle labelStyle = TextStyle(
+  fontFamily: GoogleFonts.roboto().fontFamily,
+  color: Colors.black,
+  fontSize: 14,
+  // fontWeight: FontWeight.w900
+);
