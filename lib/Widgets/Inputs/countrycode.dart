@@ -10,10 +10,10 @@ class CountryCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 130,
+      width: 120,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.grey.withOpacity(0.4)),
         borderRadius: BorderRadius.circular(10),
       ),
       child: CountryCodePickerX(
@@ -21,7 +21,7 @@ class CountryCode extends StatelessWidget {
         padding: EdgeInsets.zero,
         hideSearch: true,
         showFlag: true,
-        flagWidth: 50,
+        flagWidth: 20,
         flagDecoration: BoxDecoration(
           shape: BoxShape.circle,
           // color: Colors.white,
@@ -36,7 +36,7 @@ class CountryCode extends StatelessWidget {
         textStyle: TextStyle(
           fontFamily: GoogleFonts.roboto().fontFamily,
           color: Colors.black,
-          fontSize: 15,
+          fontSize: 12,
           fontWeight: FontWeight.w900,
         ),
       ),

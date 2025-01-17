@@ -16,7 +16,7 @@ TextStyle bluefont = TextStyle(
 TextStyle blueheadingfont = TextStyle(
     fontFamily: GoogleFonts.roboto().fontFamily,
     color: btnblue,
-    fontSize: 50,
+    fontSize: 30,
     fontWeight: FontWeight.w900);
 
 TextStyle labelStyle = TextStyle(

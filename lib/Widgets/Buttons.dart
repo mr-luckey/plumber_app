@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:plumber_app/Cosntants/constants.dart';
 
@@ -5,56 +7,77 @@ class Blueroundbutton extends StatelessWidget {
   final double height;
   final double width;
   final String text;
+  Function ontap;
 
   Blueroundbutton(
       {super.key,
       required this.height,
       required this.width,
-      required this.text});
+      required this.text,
+      required this.ontap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: btnblue,
-        borderRadius: BorderRadius.circular(50),
-      ),
-      child: Center(
-        child: Text(text, style: whitefont),
+    return GestureDetector(
+      onTap: () {
+        ontap();
+      },
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: btnblue,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Center(
+          child: Text(text, style: whitefont),
+        ),
       ),
     );
   }
 }
 
 class RoundborderBtn extends StatelessWidget {
-  const RoundborderBtn({super.key});
+  final title;
+  Function ontap;
+  RoundborderBtn({super.key, required this.title, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 55,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: btnblue),
-        borderRadius: BorderRadius.circular(50),
-      ),
-      child: Center(
-        child: Text('Get Started', style: bluefont),
+    return GestureDetector(
+      onTap: () {
+        ontap();
+      },
+      child: Container(
+        height: 55,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(color: btnblue),
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Center(
+          child: Text(title, style: bluefont),
+        ),
       ),
     );
   }
 }
 
 class RoundIconBtn extends StatelessWidget {
-  const RoundIconBtn({super.key});
+  String iconpath;
+  Function ontap;
+  String title;
+  RoundIconBtn(
+      {super.key,
+      required this.iconpath,
+      required this.title,
+      required this.ontap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      height: 40,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -65,9 +88,9 @@ class RoundIconBtn extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.values(),
         children: [
           SizedBox(width: 40),
-          Icon(Icons.wechat_sharp, color: btnblue),
-          SizedBox(width: 30),
-          Text('Continue with WhatsApp',
+          Image.asset(iconpath, width: 20),
+          SizedBox(width: 20),
+          Text(title,
               style:
                   bluefont.copyWith(fontWeight: FontWeight.w100, fontSize: 18)),
         ],
